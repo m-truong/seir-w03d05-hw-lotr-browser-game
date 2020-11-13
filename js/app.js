@@ -71,15 +71,26 @@ function makeMiddleEarth () {
 
 function makeHobbits() {
   console.log("2: makeHobbits");
-
-  // display an `unordered list` of hobbits in the shire
-
-  // give each hobbit a class of `hobbit`
-
+  // dependent on The Lands Array from before!!! 
+  const shire = document.getElementById("#The-Shire");
+  // display an `unordered list` of hobbits IN THE SHIRE
+  const uList = document.createElement("ul"); // create <ul>
+  // for-loop that needs to make new <li> for hobbits[]
+  for (let k = 0 ; k < hobbits.length; k++) {
+    // add loop that creates listItems 
+    const listItem = document.createElement("li"); // create <li>
+    // change the innerHTML of of listItem 
+    listItem.innerHTML = hobbits[k]; 
+    // give each hobbit a class of `hobbit`
+    listItem.setAttribute("class", "hobbit");
+    // appends to the uList 
+    uList.appendChild(listItem);
+    
+  }
+  console.log(uList);
+  shire.appendChild(uList);
   // hint: create a 'ul' outside the loop into which to append the 'li's
-
   // hint: get 'The-Shire' by using its id
-
 }
 
 // COMMIT YOUR WORK
