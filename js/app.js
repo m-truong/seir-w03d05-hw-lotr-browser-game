@@ -49,12 +49,17 @@ function makeMiddleEarth () {
       articleTag.setAttribute("id", `${lands[k]}`); // sets "id" to array-name
   //   2c. includes an h1 with the name of the land inside each land article
       const h1Tag = document.createElement("h1"); // creates an <h1> 
+
+      // h1Tag.setAttribute("id", `${lands[k]}`);
+
+      h1Tag.innerText = `${lands[k]}`;
+
       articleTag.appendChild(h1Tag); // but APPENDS <h1> to the <article>, BEFORE appending <article> to <section>
   //   2d. appends each land to the middle-earth section
       sectionTag.appendChild(articleTag); // then APPENDS <article> to <section>
   }
   // 3. append the section to the body of the DOM.
-      const bodyTag = document.createElement("body");
+      const bodyTag = document.querySelector("body");
       bodyTag.appendChild(sectionTag);
       
       // console log debugging
@@ -71,24 +76,34 @@ function makeMiddleEarth () {
 
 function makeHobbits() {
   console.log("2: makeHobbits");
+
   // dependent on The Lands Array from before!!! 
-  const shire = document.getElementById("#The-Shire");
+  let shire = document.querySelector("#The-Shire");
+
   // display an `unordered list` of hobbits IN THE SHIRE
   const uList = document.createElement("ul"); // create <ul>
+
   // for-loop that needs to make new <li> for hobbits[]
   for (let k = 0 ; k < hobbits.length; k++) {
+
     // add loop that creates listItems 
     const listItem = document.createElement("li"); // create <li>
-    // change the innerHTML of of listItem 
+
+    // change the innerHTML of  listItem 
     listItem.innerHTML = hobbits[k]; 
+
     // give each hobbit a class of `hobbit`
     listItem.setAttribute("class", "hobbit");
+
     // appends to the uList 
     uList.appendChild(listItem);
-    
   }
   console.log(uList);
+  console.log(shire);
+
+  //  FIX THIS IT'S NOT WORKING! 
   shire.appendChild(uList);
+
   // hint: create a 'ul' outside the loop into which to append the 'li's
   // hint: get 'The-Shire' by using its id
 }
@@ -105,11 +120,18 @@ function keepItSecretKeepItSafe() {
   console.log("3: keepItSecretKeepItSafe");
 
   // create a div with an id of `'the-ring'`
+  const theRingDiv = document.createElement("div");
+  theRingDiv.setAttribute("id", "the-ring");
 
   // give the div a class of `'magic-imbued-jewelry'`
+  theRingDiv.setAttribute("class", "magic-imbued-jewelry");
 
   // add the ring as a child of `Frodo`
-
+  const firstHobbit = document.querySelector("hobbit");
+  console.log(firstHobbit);
+  // navigating BETWEEN NODES!
+  const nextHobbit = firstHobbit.nextSibling();
+  console.log(nextHobbit);
 }
 
 // COMMIT YOUR WORK
