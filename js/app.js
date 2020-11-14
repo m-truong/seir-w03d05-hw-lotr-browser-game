@@ -274,6 +274,35 @@ function beautifulStranger() {
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
   // create a new div called `'the-fellowship'` within `rivendell`
+  const theFellowshipDiv = document.createElement("div");
+  theFellowshipDiv.setAttribute("id", "the-fellowship");
+  theFellowshipDiv.setAttribute("class", "the-fellowship");
+  
+  const rivendell = document.querySelector("#Rivendell");
+  rivendell.appendChild(theFellowshipDiv);
+
+  const hobbitsJoinFellowship = document.querySelectorAll(".hobbit");
+  const buddiesJoinFellowship = document.querySelectorAll(".buddy");
+
+  const buddies = document.querySelector("#buddy");
+  buddies.remove();
+  const hobbits = document.querySelector("#getHobbits");
+  hobbits.remove();
+
+  for (let hobbit of hobbitsJoinFellowship) {
+    theFellowshipDiv.appendChild(hobbit);
+    alert(`${hobbit.textContent} has joined the Fellowship!`);
+  }
+  for (let buddy of buddiesJoinFellowship) {
+    theFellowshipDiv.appendChild(buddy);
+    alert(`${buddy.textContent} has joined the Fellowship!`);
+  }
+
+  // theFellowshipDiv.appendChild(hobbitsJoinFellowship);
+  // theFellowshipDiv.appendChild(buddiesJoinFellowship);
+  console.log(rivendell);
+
+
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
   // after each character is added make an alert that they // have joined your party
   
