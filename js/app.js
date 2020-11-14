@@ -128,6 +128,7 @@ function keepItSecretKeepItSafe() {
 
   // add the ring as a child of `Frodo`
   const firstHobbit = document.querySelector(".hobbit");
+  firstHobbit.setAttribute("id", "frodo");
   console.log(firstHobbit);
   
   firstHobbit.appendChild(theRingDiv);
@@ -287,14 +288,16 @@ function forgeTheFellowShip() {
   const hobbits = document.querySelector("#getHobbits");
   hobbits.remove();
 
-  for (let hobbit of hobbitsJoinFellowship) {
-    theFellowshipDiv.appendChild(hobbit);
-    alert(`${hobbit.textContent} has joined the Fellowship!`);
-  }
   for (let buddy of buddiesJoinFellowship) {
     theFellowshipDiv.appendChild(buddy);
     alert(`${buddy.textContent} has joined the Fellowship!`);
   }
+
+  for (let hobbit of hobbitsJoinFellowship) {
+    theFellowshipDiv.appendChild(hobbit);
+    alert(`${hobbit.textContent} has joined the Fellowship!`);
+  }
+  
 
   // theFellowshipDiv.appendChild(hobbitsJoinFellowship);
   // theFellowshipDiv.appendChild(buddiesJoinFellowship);
@@ -405,8 +408,25 @@ function itsDangerousToGoAlone() {
 function weWantsIt() { 
   console.log("12: weWantsIt");
   // Create a div with an id of `'gollum'` and add it to Mordor
+  const gollumDiv = document.createElement("div");
+  gollumDiv.setAttribute("id", "gollum");
+  // gollumDiv.innerHTML = `Gollum`;
+  const mordor = document.querySelector("#Mordor");
+
+  mordor.appendChild(gollumDiv);
   // Remove `the ring` from `Frodo` and give it to `Gollum`
+  const frodo = document.querySelector("#frodo");
+
+  const theRingDiv = document.querySelector("#the-ring");
+  console.log(theRingDiv);
+  theRingDiv.remove();
+  console.log(frodo);
+  gollumDiv.appendChild(theRingDiv);
+
   // Move Gollum into Mount Doom
+  gollumDiv.remove();
+  const mountDoomDiv = document.querySelector("#mount-doom");
+  mountDoomDiv.appendChild(gollumDiv);
 }
 
 
