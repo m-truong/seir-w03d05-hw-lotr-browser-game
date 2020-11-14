@@ -29,8 +29,6 @@ const lands = [
   'Mordor'
 ];
 
-// DON'T AUTO INDENT
-
 // ============
 // Chapter 1
 // ============
@@ -44,26 +42,22 @@ function makeMiddleEarth () {
   // 2. use a for loop to iterate over the lands array that does the following:
   for (let k = 0 ; k < lands.length ; k++) {
   //   2a. creates an article tag (there should be one for each land when the loop is done)
-      const articleTag = document.createElement("article"); // loops creates <article>
+      const articleTag = document.createElement("article"); 
   //   2b. gives each land article an `id` tag of the corresponding land name
-      articleTag.setAttribute("id", `${lands[k]}`); // sets "id" to array-name
+      articleTag.setAttribute("id", `${lands[k]}`); 
   //   2c. includes an h1 with the name of the land inside each land article
-      const h1Tag = document.createElement("h1"); // creates an <h1> 
-
-      // h1Tag.setAttribute("id", `${lands[k]}`);
+      const h1Tag = document.createElement("h1"); 
 
       h1Tag.innerText = `${lands[k]}`;
 
-      articleTag.appendChild(h1Tag); // but appends <h1> to the <article>, BEFORE appending <article> to <section>
+      articleTag.appendChild(h1Tag); 
   //   2d. appends each land to the middle-earth section
-      sectionTag.appendChild(articleTag); // then appends <article> to <section>
+      sectionTag.appendChild(articleTag); 
   }
   // 3. append the section to the body of the DOM.
       const bodyTag = document.querySelector("body");
       bodyTag.appendChild(sectionTag);
       
-      // console log debugging
-      console.log(bodyTag);
 }
 
 
@@ -99,8 +93,6 @@ function makeHobbits() {
     // appends to the uList 
     uList.appendChild(lItem);
   }
-  console.log(uList);
-  console.log(shire);
 
   shire.appendChild(uList);
 
@@ -129,7 +121,6 @@ function keepItSecretKeepItSafe() {
   // add the ring as a child of `Frodo`
   const firstHobbit = document.querySelector(".hobbit");
   firstHobbit.setAttribute("id", "frodo");
-  console.log(firstHobbit);
   
   firstHobbit.appendChild(theRingDiv);
 }
@@ -150,7 +141,6 @@ function makeBaddies() {
 
   // display an unordered list of baddies in Mordor
   const uList = document.createElement("ul");
-  console.log(uList);
   uList.setAttribute("id", "baddy")
 
   for (let k = 0 ; k < baddies.length ; k++) {
@@ -167,8 +157,6 @@ function makeBaddies() {
     uList.appendChild(lItem);
 
   }
-  console.log(uList);
-  console.log(mordor);
 
   // remember to append them to Mordor
   mordor.appendChild(uList);
@@ -189,7 +177,6 @@ function makeBuddies () {
 
   // create an `aside` tag
   const aside = document.createElement("aside");
-  console.log(aside);
   
   const uList = document.createElement("ul");
   uList.setAttribute("id", "buddy");
@@ -208,13 +195,8 @@ function makeBuddies () {
         uList.appendChild(lItem);
   }
   aside.appendChild(uList);
-   console.log(aside);
-   console.log(rivendell);
-
-
    // insert your aside as a child element of `rivendell`
    rivendell.appendChild(aside);
-
 }
 
 // COMMIT YOUR WORK
@@ -229,7 +211,6 @@ function leaveTheShire() {
   console.log("6: leaveTheShire");
     // assemble the `hobbits` and move them to `rivendell`
     const assembledHobbits = document.querySelector("#getHobbits");
-    console.log(assembledHobbits);
 
     // call .remove() directly on child-node from Parent-Node
     assembledHobbits.remove();
@@ -252,14 +233,10 @@ function beautifulStranger() {
 
   // change the `'Strider'` text to `'Aragorn'`
   const buddyList = document.querySelectorAll(".buddy");
-  console.log(buddyList);
 
   const strider = buddyList.item(3);
-  console.log(strider);
   
   strider.innerHTML = `Aragorn`;
-  console.log(strider);
-
 }
 
 // COMMIT YOUR WORK
@@ -297,12 +274,6 @@ function forgeTheFellowShip() {
     theFellowshipDiv.appendChild(hobbit);
     alert(`${hobbit.textContent} has joined the Fellowship!`);
   }
-  
-
-  // theFellowshipDiv.appendChild(hobbitsJoinFellowship);
-  // theFellowshipDiv.appendChild(buddiesJoinFellowship);
-  console.log(rivendell);
-
 
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
   // after each character is added make an alert that they // have joined your party
@@ -322,13 +293,10 @@ function theBalrog() {
   console.log("9: theBalrog");
    // change the `'Gandalf'` text to `'Gandalf the White'`
    const buddyList = document.querySelectorAll(".buddy");
-   console.log(buddyList);
  
    const gandalf = buddyList.item(0);
-   console.log(gandalf);
    
    gandalf.innerHTML = `Gandalf the White`;
-   console.log(gandalf);
    // apply the following style to the element, make the // background 'white', add a grey border
    gandalf.setAttribute("style", "background: white; border: 1px solid grey;")
   }
@@ -349,13 +317,10 @@ function hornOfGondor() {
   alert(`Boromir has been killed by the Uruk-hai!`);
   // Remove `Boromir` from the Fellowship
   const buddyList = document.querySelectorAll(".buddy");
-   console.log(buddyList);
  
    const boromir = buddyList.item(4);
-   console.log(boromir);
    
    boromir.remove();
-   console.log(buddyList);
 
 }
 
@@ -371,17 +336,18 @@ function itsDangerousToGoAlone() {
   console.log("11: itsDangerousToGoAlone");
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
    const hobbitList = document.querySelectorAll(".hobbit");
-   console.log(hobbitList);
  
    const frodo = hobbitList.item(0);
    const sam = hobbitList.item(1);
-   
+   const merry = hobbitList.item(2);
+   const pippin = hobbitList.item(3);
+  sam.setAttribute("id", "sam");
+  merry.setAttribute("id", "merry");
+  pippin.setAttribute("id", "pippin");
    frodo.remove();
    sam.remove();
-   console.log(hobbitList);
 
    const mordor = document.querySelector("#Mordor");
-   console.log(mordor);
    mordor.appendChild(frodo);
   mordor.appendChild(sam);
 
@@ -415,12 +381,9 @@ function weWantsIt() {
 
   mordor.appendChild(gollumDiv);
   // Remove `the ring` from `Frodo` and give it to `Gollum`
-  const frodo = document.querySelector("#frodo");
 
   const theRingDiv = document.querySelector("#the-ring");
-  console.log(theRingDiv);
   theRingDiv.remove();
-  console.log(frodo);
   gollumDiv.appendChild(theRingDiv);
 
   // Move Gollum into Mount Doom
@@ -440,7 +403,35 @@ function weWantsIt() {
 function thereAndBackAgain() { 
   console.log("13: thereAndBackAgain");
   // remove `Gollum` and `the Ring` from the document
+  const theRingDiv = document.querySelector("#the-ring");
+  const gollumDiv = document.querySelector("#gollum");
+  theRingDiv.remove();
+  gollumDiv.remove();
+
   // Move all the `hobbits` back to `the shire`
+  // const hobbitsGoHome = document.querySelector(".getHobbits");
+  // console.log(hobbitsGoHome);
+  // hobbitsGoHome.remove();
+
+  const frodo = document.querySelector("#frodo");
+  frodo.remove();
+  const sam = document.querySelector("#sam");
+  sam.remove();
+  const merry = document.querySelector("#merry");
+  merry.remove();
+  const pippin = document.querySelector("#pippin");
+  pippin.remove();
+
+  const shire = document.querySelector("#The-Shire");
+  shire.appendChild(frodo);
+  shire.appendChild(sam);
+  shire.appendChild(merry);
+  shire.appendChild(pippin);
+  // shire.appendChild(hobbitsGoHome);
+
+  console.log(shire);
+
+  setTimeout(() => {alert("I did it!")}, 1000);
 }
 
 // COMMIT YOUR WORK
