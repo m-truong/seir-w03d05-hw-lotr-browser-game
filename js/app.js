@@ -405,6 +405,8 @@ function thereAndBackAgain() {
   // remove `Gollum` and `the Ring` from the document
   const theRingDiv = document.querySelector("#the-ring");
   const gollumDiv = document.querySelector("#gollum");
+  const baddies = document.querySelector("#baddy");
+  baddies.remove();
   theRingDiv.remove();
   gollumDiv.remove();
 
