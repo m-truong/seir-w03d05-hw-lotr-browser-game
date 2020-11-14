@@ -142,12 +142,33 @@ function keepItSecretKeepItSafe() {
 
 function makeBaddies() { 
   console.log("4: makeBaddies");
+  
+
+  const mordor = document.querySelector("#Mordor");
 
   // display an unordered list of baddies in Mordor
+  const uList = document.createElement("ul");
+  console.log(uList);
 
-  // give each of the baddies a class of "baddy"
+  for (let k = 0 ; k < baddies.length ; k++) {
+  
+    const lItem = document.createElement("li");
+
+    // give each of the baddies a class of "baddy"
+    lItem.setAttribute("class", `baddy`);
+
+    // change the innerHTML of  listItem 
+    lItem.innerHTML = baddies[k]; 
+
+    // appends to the uList 
+    uList.appendChild(lItem);
+
+  }
+  console.log(uList);
+  console.log(mordor);
 
   // remember to append them to Mordor
+  mordor.appendChild(uList);
 
 }
 
