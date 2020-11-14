@@ -182,12 +182,34 @@ function makeBaddies() {
 
 function makeBuddies () { 
   console.log("5: makeBuddies");
+  const rivendell = document.querySelector("#Rivendell");
 
   // create an `aside` tag
-   
+  const aside = document.createElement("aside");
+  console.log(aside);
+  
+  const uList = document.createElement("ul");
+
+  for (let k = 0 ; k < buddies.length;  k++) {
   // put an `unordered list` of the `'buddies'` in the aside
-   
-  // insert your aside as a child element of `rivendell`
+    const lItem = document.createElement("li");
+
+        // give each of the baddies a class of "baddy"
+        lItem.setAttribute("class", `buddy`);
+
+        // change the innerHTML of  listItem 
+        lItem.innerHTML = buddies[k]; 
+    
+        // appends to the uList 
+        uList.appendChild(lItem);
+  }
+  aside.appendChild(uList);
+   console.log(aside);
+   console.log(rivendell);
+
+
+   // insert your aside as a child element of `rivendell`
+   rivendell.appendChild(aside);
 
 }
 
