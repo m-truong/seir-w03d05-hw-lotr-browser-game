@@ -54,9 +54,9 @@ function makeMiddleEarth () {
 
       h1Tag.innerText = `${lands[k]}`;
 
-      articleTag.appendChild(h1Tag); // but APPENDS <h1> to the <article>, BEFORE appending <article> to <section>
+      articleTag.appendChild(h1Tag); // but appends <h1> to the <article>, BEFORE appending <article> to <section>
   //   2d. appends each land to the middle-earth section
-      sectionTag.appendChild(articleTag); // then APPENDS <article> to <section>
+      sectionTag.appendChild(articleTag); // then appends <article> to <section>
   }
   // 3. append the section to the body of the DOM.
       const bodyTag = document.querySelector("body");
@@ -77,31 +77,30 @@ function makeMiddleEarth () {
 function makeHobbits() {
   console.log("2: makeHobbits");
 
-  // dependent on The Lands Array from before!!! 
-  let shire = document.querySelector("#The-Shire");
+  // dependent on The Lands Array from before
+  const shire = document.querySelector("#The-Shire");
 
-  // display an `unordered list` of hobbits IN THE SHIRE
+  // display an `unordered list` of hobbits in the shire
   const uList = document.createElement("ul"); // create <ul>
 
-  // for-loop that needs to make new <li> for hobbits[]
+  // for-loop that needs to make new <li> for hobbits array
   for (let k = 0 ; k < hobbits.length; k++) {
 
     // add loop that creates listItems 
-    const listItem = document.createElement("li"); // create <li>
+    const lItem = document.createElement("li"); // create <li>
 
     // change the innerHTML of  listItem 
-    listItem.innerHTML = hobbits[k]; 
+    lItem.innerHTML = hobbits[k]; 
 
     // give each hobbit a class of `hobbit`
-    listItem.setAttribute("class", "hobbit");
+    lItem.setAttribute("class", "hobbit");
 
     // appends to the uList 
-    uList.appendChild(listItem);
+    uList.appendChild(lItem);
   }
   console.log(uList);
   console.log(shire);
 
-  //  FIX THIS IT'S NOT WORKING! 
   shire.appendChild(uList);
 
   // hint: create a 'ul' outside the loop into which to append the 'li's
@@ -127,11 +126,10 @@ function keepItSecretKeepItSafe() {
   theRingDiv.setAttribute("class", "magic-imbued-jewelry");
 
   // add the ring as a child of `Frodo`
-  const firstHobbit = document.querySelector("hobbit");
+  const firstHobbit = document.querySelector(".hobbit");
   console.log(firstHobbit);
-  // navigating BETWEEN NODES!
-  const nextHobbit = firstHobbit.nextSibling();
-  console.log(nextHobbit);
+  
+  firstHobbit.appendChild(theRingDiv);
 }
 
 // COMMIT YOUR WORK
