@@ -82,6 +82,7 @@ function makeHobbits() {
 
   // display an `unordered list` of hobbits in the shire
   const uList = document.createElement("ul"); // create <ul>
+  uList.setAttribute("id", "getHobbits");
 
   // for-loop that needs to make new <li> for hobbits array
   for (let k = 0 ; k < hobbits.length; k++) {
@@ -223,8 +224,16 @@ function makeBuddies () {
 
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
+    // assemble the `hobbits` and move them to `rivendell`
+    const assembledHobbits = document.querySelector("#getHobbits");
+    console.log(assembledHobbits);
 
-  // assemble the `hobbits` and move them to `rivendell`
+    // call .remove() directly on child-node from Parent-Node
+    assembledHobbits.remove();
+    // still stored in variable
+
+    const rivendell = document.querySelector("#Rivendell");
+    rivendell.appendChild(assembledHobbits);
 }
 
 // COMMIT YOUR WORK
