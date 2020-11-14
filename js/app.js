@@ -258,8 +258,6 @@ function beautifulStranger() {
   
   strider.innerHTML = `Aragorn`;
   console.log(strider);
-  // const nextBuddy = firstBuddy.nextSibling();
-  // console.log(nextBuddy);
 
 }
 
@@ -320,8 +318,17 @@ function forgeTheFellowShip() {
 function theBalrog() { 
   console.log("9: theBalrog");
    // change the `'Gandalf'` text to `'Gandalf the White'`
+   const buddyList = document.querySelectorAll(".buddy");
+   console.log(buddyList);
+ 
+   const gandalf = buddyList.item(0);
+   console.log(gandalf);
+   
+   gandalf.innerHTML = `Gandalf the White`;
+   console.log(gandalf);
    // apply the following style to the element, make the // background 'white', add a grey border
-}
+   gandalf.setAttribute("style", "background: white; border: 1px solid grey;")
+  }
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 9 complete - Updated Gandalf"
