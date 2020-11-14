@@ -150,6 +150,7 @@ function makeBaddies() {
   // display an unordered list of baddies in Mordor
   const uList = document.createElement("ul");
   console.log(uList);
+  uList.setAttribute("id", "baddy")
 
   for (let k = 0 ; k < baddies.length ; k++) {
   
@@ -190,6 +191,7 @@ function makeBuddies () {
   console.log(aside);
   
   const uList = document.createElement("ul");
+  uList.setAttribute("id", "buddy");
 
   for (let k = 0 ; k < buddies.length;  k++) {
   // put an `unordered list` of the `'buddies'` in the aside
@@ -248,6 +250,17 @@ function beautifulStranger() {
   console.log("7: beautifulStranger");
 
   // change the `'Strider'` text to `'Aragorn'`
+  const buddyList = document.querySelectorAll(".buddy");
+  console.log(buddyList);
+
+  const strider = buddyList.item(3);
+  console.log(strider);
+  
+  strider.innerHTML = `Aragorn`;
+  console.log(strider);
+  // const nextBuddy = firstBuddy.nextSibling();
+  // console.log(nextBuddy);
+
 }
 
 // COMMIT YOUR WORK
